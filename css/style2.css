@@ -1,9 +1,18 @@
 @charset "utf-8";
 
-*{margin: 0; padding: 0;}
+
+@font-face {
+  font-family: NotoKR;
+  src: url(../webfonts/NotoSansKR-Regular.woff) format("woff");
+}
+*{
+  margin: 0; padding: 0;
+  font-family: NotoKR;
+}
 ul{list-style: none;}
 a{text-decoration: none;}
 
+body{overflow-x: hidden;}
 .section{width: 100%; height: 100vh;}
 .section .title{
   width: 100%; text-align: center;
@@ -76,9 +85,9 @@ header .nav>li:hover>a{
 }
 header .nav>li .sub{
   width: 100%; height: 0;
-  position: absolute; top: 101px; left: 0;
+  position: absolute; top: 100px; left: 0;
   padding-top: 30px; box-sizing: border-box;
-  z-index: 1;
+  z-index: 99;
   overflow: hidden;
   
 }
@@ -116,17 +125,86 @@ header .nav_Bg{
   transition: .3s;
 
 }
-/* header:hover */ .nav_Bg.on{
+.nav_Bg.on{
   height: 340px;
 }
 
 
 
 /* section1 시작 */
-.s1 .slide{width: 100%;}
-.s1 p{height: 100vh;}
-.s1 img{
+.s1{
+  position: relative;
+}
+.mySwiper2{
+  overflow: hidden;
+}
+
+.s1 .swiper-slide .bg{
+  width: 100%;
+  height: 100vh;
+}
+.s1 .swiper-slide .bg img{
   width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.1); transition: 4s;
+}
+.s1 .swiper-slide .bg img.on{
+  transform: scale(1);
+}
+.s1 .text{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+.s1 .text h2{
+  color: #fff;
+  font-size: 60px;
+  line-height: 75px;
+}
+.s1 .text h2 span{
+  color: #095dba;
+}
+.s1 .text p{
+  width: 300px;
+}
+.s1 #btn{
+  position: absolute; width: 80%; height: 50px;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.s1 #btn .swiper-button-next:after,
+.s1 #btn .swiper-button-prev:after{
+  font-size: 2em; color: #fff; font-weight: bold;
+}
+.mySwiper2 .autoplay-progress {
+  position: absolute;
+  left: 10%;
+  bottom: 20%;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+.mySwiper2 .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 3px;
+  stroke: #fff;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }
 
 
@@ -333,65 +411,171 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 .s4 .title p:nth-child(2){
   color: #333;
 }
-.s4 ul{
-  width: 85%; margin: 0 auto;
+
+.s4 > .section {
   display: flex;
-  justify-content: center; gap: 5%; align-items: center;
-  position: absolute; bottom: 100px; left: 50%;
-  transform: translateX(-50%);
+  height: 100vh;
+  align-items: center;
 }
-.s4 ul li:nth-child(odd){
-  width: 230px;
+.main4 {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
-.s4 ul li:nth-child(2){
+.main4 .mySwiper {
+  position: absolute;
+  left: 0;
+  top: 65%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.main4 .mySwiper .swiper-container {
   width: 700px;
-  display: flex; align-items: center;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
 }
-.s4 ul li>p{
-  aspect-ratio: 1 / 1; font-size: 0;
-  border-radius: 5px; overflow: hidden;
+.main4 .mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main4 .mySwiper .swiper-slide img {
+  width: 90%; height: 400px;
+  object-fit: cover;
+}
+.main4 .mySwiper1 {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 65%;
+  width: 100%;
+  height: 500px;
+  transform: translateY(-50%);
+}
+.main4 .mySwiper1 .swiper-container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  height: 500px;
+  background: #fff;
+}
+.main4 .mySwiper1 .swiper-slide {
+  background: #fff;
+}
+.main4 .mySwiper1 .swiper-slide a {
+  display: flex;
+}
+.main4 .mySwiper1 .swiper-slide div {
+  display: block;
+  width: 50%;
+  /* padding-bottom: 35%; */
   position: relative;
 }
-.s4 ul li:nth-child(odd)>p::after{
+.main4 .mySwiper1 .swiper-slide img {
+  display: block;
+  width: 90%; height: 400px;
+  object-fit: cover;
+  position: absolute;
+}
+.main4 .mySwiper1 .swiper-slide .info {
+  width: calc(50% - 1px);
+  padding: 20px 75px 0;
+  text-align: left;
+  background: #fff;
+}
+.main4 .mySwiper1 .swiper-slide .info .label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+.main4 .mySwiper1 .swiper-slide .info .label.yellow {
+  color: #ffb400;
+  font-size: 18px;
+  font-weight: bold;
+}
+.main4 .mySwiper1 .swiper-slide .info .label.blue {
+}
+.main4 .mySwiper1 .swiper-slide .info strong {
+  display: block;
+  font-size: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555;
+}
+.main4 .mySwiper1 .swiper-slide .info p {
+  position: relative;
+  margin-top: 39px;
+  padding-top: 28px;
+  font-size: 18px;
+  line-height: 2.222em;
+  color: #555;
+}
+.main4 .mySwiper1 .swiper-slide .info p:after {
   content: "";
-  position: absolute; left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  border-top: 3px solid #ffb400;
 }
-/* .s4 ul li:nth-child(odd)>p::before{
-  content: url(../images/MP_section4_img5.jpg);
-  position: absolute; left: 0; top: 0;
-  width: 100%; height: 100%;
-  filter: blur(2px);
-} */
-.s4 ul li:nth-child(2)>p{
-  width: 50%;
-  border-radius: 5px 100px 5px 5px;
+
+.main4 .mySwiper1 .paginate {
+  position: absolute;
+  bottom: 0;
+
+  text-align: center;
+
+  z-index: 90;
 }
-.s4 ul li>p img{
-  width: 100%; height: 100%; object-fit: cover;
+.main4 .mySwiper1 .paginate .swiper-pagination-bullet {
+  position: relative;
+  opacity: 1;
+  border-radius: 0;
+  background: #ddd;
+  margin: 0 10px;
+  transition: all 300ms;
 }
-.s4 ul li .txt{
-  width: 50%;
-  display: flex; flex-direction: column;
-  gap: 50px; margin-left: 40px;
-  letter-spacing: -1px;
-}
-.s4 ul li .txt p:nth-child(1){
-  color: #FFB400; font-size: 18px; font-weight: bold;
-}
-.s4 ul li .txt p:nth-child(2){
-  color: #555; font-size: 27px; font-weight: bold;
-  position: relative; margin-bottom: 10px;
-}
-.s4 ul li .txt p:nth-child(2)::after{
+.main4 .mySwiper1 .paginate .swiper-pagination-bullet:before {
   content: "";
-  position: absolute; left: 0; bottom: -30px;
-  width: 60px; height: 2px;
-  background-color: #FFB400;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #fff;
+  transition: all 300ms;
 }
-.s4 ul li .txt p:nth-child(3){
-  color: #555; line-height: 30px;
+
+.main4 .mySwiper1 .paginate .swiper-pagination-bullet-active {
+  width: 70px;
+  background: #ffb400;
+}
+.main4 .mySwiper1 .paginate .swiper-pagination-bullet-active:before {
+  opacity: 0;
+}
+
+.main4 .mySwiper1 .btn {
+  position: absolute;
+  top: 50%;
+  width: 37px;
+  height: 71px;
+  margin-top: -35px;
+  background: url(http://www.mdmworld.co.kr/assets/pc/images/main/btn-roll.png)
+    0 0 no-repeat;
+  border: 0;
+  text-indent: -9999px;
+  z-index: 100;
+  cursor: pointer;
+}
+.main4 .mySwiper1 .btn.prev {
+  left: -80px;
+}
+.main4 .mySwiper1 .btn.next {
+  right: -80px;
+  background-position: 100% 0;
 }
 
 
