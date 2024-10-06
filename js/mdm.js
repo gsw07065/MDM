@@ -106,10 +106,13 @@ prevButton.addEventListener("click", () => {
 
 
 
-
+//제이쿼리 풀페이지
+  $('#fullpage').fullpage({
+    navigation:true,
+    //scrollBar: true,
+  });
 
 //제이쿼리 gsap s1
-
 const ani1 = gsap.timeline();
     ani1.from(".s1 .text p img",{
       x: -180,
@@ -120,3 +123,27 @@ const ani1 = gsap.timeline();
       opacity:0,
       duration: 1
     },"<1");
+
+
+//top버튼 이동
+$('#MOVE_TOP_BTN').click(function () {
+  //$.fn.fullpage.setScrollingSpeed(0); 효과를 없애고싶을때
+  $.fn.fullpage.moveTo(1); // 이동하고싶은 페이지
+  //$.fn.fullpage.setScrollingSpeed(700); 효과를 없애고싶을때
+});
+
+/* $(window).scroll(function() {
+  if ($(this).scrollTop() > 500) {
+  $('#MOVE_TOP_BTN').fadeIn();
+  } else {
+  $('#MOVE_TOP_BTN').fadeOut();
+  }
+});
+$("#MOVE_TOP_BTN").click(function() {
+$('html, body').animate({
+scrollTop : 0
+}, 400);
+return false;
+}); */
+
+

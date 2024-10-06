@@ -12,7 +12,9 @@
 ul{list-style: none;}
 a{text-decoration: none;}
 
-body{overflow-x: hidden;}
+body{
+  overflow-x: hidden;
+}
 .section{width: 100%; height: 100vh;}
 .section .title{
   width: 100%; text-align: center;
@@ -27,6 +29,46 @@ body{overflow-x: hidden;}
 .section .title p:nth-child(2){
   font-size: 70px; font-weight: bold;
 }
+
+
+/* fp-nav 시작 */
+#fp-nav{
+  transform: scale(1.7) !important;
+  width: 3%;
+}
+#fp-nav ul{
+  width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center;
+}
+#fp-nav ul li a span{
+  background-color: transparent !important;
+  border-radius: 0;
+  border: 1px solid #bbb;
+
+}
+#fp-nav ul li a.active span{
+  background-color: #FEB516 !important;
+  border-radius: 0 !important;
+  border: none;
+  margin-left: -5px;
+}
+#fp-nav ul li a.active span:hover{
+  border-radius: 0 !important;
+  margin-left: -5px;
+}
+#fp-nav ul li:nth-child(5){
+  display: none;
+}
+/* #fp-nav ul li a.active span::after{
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 1px solid #FEB516;
+} */
+
 
 /* header 시작 */
 header{
@@ -159,17 +201,20 @@ header .nav_Bg{
 }
 .s1 .text h2{
   color: #fff;
-  font-size: 60px;
-  line-height: 75px;
+  font-size: 65px;
+  line-height: 80px;
+  font-weight: normal;
+  letter-spacing: -2px;
 }
 .s1 .text h2 span{
   color: #095dba;
+  font-weight: bold;
 }
 .s1 .text p{
   width: 300px;
 }
 .s1 #btn{
-  position: absolute; width: 80%; height: 50px;
+  position: absolute; width: 85%; height: 50px;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -180,8 +225,8 @@ header .nav_Bg{
 }
 .mySwiper2 .autoplay-progress {
   position: absolute;
-  left: 10%;
-  bottom: 20%;
+  right: 7%;
+  bottom: 10%;
   z-index: 10;
   width: 80px;
   height: 80px;
@@ -265,18 +310,19 @@ header .nav_Bg{
 }
 .s2 .since_Box li .show p.since2{
   align-items: flex-end;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .s2 .since_Box li .hide{
-  margin-top: 15px;
+  margin-top: 20px;
   opacity: 0; transition: .3s;
+  margin-bottom: 30px;
 }
 .s2 .since_Box li:nth-child(3) .hide{
-  margin-bottom: -17px;
+  margin-bottom: 17px;
   opacity: 0; 
 }
 .s2 .since_Box li:hover .hide{
-  margin-bottom: 30px; 
+  margin-bottom: 80px; 
   opacity: 1;
 }
 .s2 .since_Box li .hide p{
@@ -285,7 +331,7 @@ font-size: 14px;
 .s2 .since_Box li .hide a{
 color: #fff;
 font-size: 14px; font-weight: 600;
-line-height: 70px;
+line-height: 100px;
 }
 .s2 .since_Box li .hide a span{
   padding-left: 5px;
@@ -319,7 +365,7 @@ position: relative;
   display: flex; justify-content: center;
   gap: 30px;
   margin: 0 auto;
-  position: absolute; bottom: 100px; left: 50%;
+  position: absolute; bottom: 150px; left: 50%;
   transform: translateX(-50%);
 }
 .s3 ul.main>li{
@@ -425,7 +471,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 .main4 .mySwiper {
   position: absolute;
   left: 0;
-  top: 65%;
+  top: 67%;
   width: 100%;
   transform: translateY(-50%);
 }
@@ -442,14 +488,14 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
   align-items: center;
 }
 .main4 .mySwiper .swiper-slide img {
-  width: 90%; height: 400px;
+  width: 90%; height: 380px;
   object-fit: cover;
 }
 .main4 .mySwiper1 {
   position: absolute;
   z-index: 3;
   left: 0;
-  top: 65%;
+  top: 67%;
   width: 100%;
   height: 500px;
   transform: translateY(-50%);
@@ -475,7 +521,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 }
 .main4 .mySwiper1 .swiper-slide img {
   display: block;
-  width: 90%; height: 400px;
+  width: 90%; height: 380px;
   object-fit: cover;
   position: absolute;
 }
@@ -499,7 +545,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 }
 .main4 .mySwiper1 .swiper-slide .info strong {
   display: block;
-  font-size: 28px;
+  font-size: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -509,7 +555,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
   position: relative;
   margin-top: 39px;
   padding-top: 28px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 2.222em;
   color: #555;
 }
@@ -524,10 +570,8 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 
 .main4 .mySwiper1 .paginate {
   position: absolute;
-  bottom: 0;
-
+  bottom: 20px;
   text-align: center;
-
   z-index: 90;
 }
 .main4 .mySwiper1 .paginate .swiper-pagination-bullet {
@@ -559,7 +603,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 
 .main4 .mySwiper1 .btn {
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: 37px;
   height: 71px;
   margin-top: -35px;
@@ -703,6 +747,22 @@ footer .footTop::after{
   transform: translateX(-50%);
 }
 
+
+
+/* top버튼 시작 */
+a#MOVE_TOP_BTN{
+  position: fixed;
+  right: 1%;
+  bottom: 25%;
+  display: none;
+  z-index: 999;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #000;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+}
 
 
 
