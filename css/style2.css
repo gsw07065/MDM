@@ -184,6 +184,14 @@ header .nav_Bg{
 .s1 .swiper-slide .bg{
   width: 100%;
   height: 100vh;
+  position: relative;
+}
+.s1 .swiper-slide .bg::after{
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, .25);
 }
 .s1 .swiper-slide .bg img{
   width: 100%; height: 100%; object-fit: cover;
@@ -207,7 +215,7 @@ header .nav_Bg{
   letter-spacing: -2px;
 }
 .s1 .text h2 span{
-  color: #095dba;
+  color: #FFC53A;
   font-weight: bold;
 }
 .s1 .text p{
