@@ -113,7 +113,7 @@ prevButton.addEventListener("click", () => {
   });
 
 //제이쿼리 gsap s1
-const ani1 = gsap.timeline();
+  const ani1 = gsap.timeline();
     ani1.from(".s1 .text p img",{
       x: -180,
       scale:1.4,
@@ -123,7 +123,7 @@ const ani1 = gsap.timeline();
       opacity:0,
       duration: 1
     },"<1");
-
+    
 
 //top버튼 이동
 $('#MOVE_TOP_BTN').click(function () {
