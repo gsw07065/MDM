@@ -671,7 +671,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
   filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, .4));
 }
 .s5 ul li a>p{
-  width: 100%; height: 225px; overflow: hidden;
+  width: 100%; height: 270px; overflow: hidden;
 }
 .s5 ul li a>p img{
   width: 100%; height: 100%; object-fit: cover;
@@ -681,10 +681,10 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
   transform: scale(1.1);
 }
 .s5 ul li a .txt{
-  width: 100%; height: 165px;
+  width: 100%; height: 190px;
   background-color: rgba(255, 255, 255, .9);
   padding: 25px 0 25px 20px; box-sizing: border-box;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
 }
 .s5 ul li:hover a .txt{
   background-color: #FFB400;
@@ -696,7 +696,7 @@ background-image: url(../images/MP_section3_social&cultural_bg.jpg);
 .s5 ul li a .txt p:nth-child(2){
   color: #444; font-size: 15px;
   margin: 15px 0;
-  line-height: 25px; letter-spacing: -2px;
+  line-height: 25px; letter-spacing: -1px;
 }
 .s5 ul li a .txt p:nth-child(3){
   color: #aaa; font-size: 14px;

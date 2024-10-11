@@ -10,7 +10,8 @@ navLi.forEach(function(v,k){
   };
   v.onmouseleave = function(){
     header.classList.remove("on");
-    navBg.classList.remove("on");header.querySelector(".logo a").classList.remove("on");
+    navBg.classList.remove("on");
+    header.querySelector(".logo a").classList.remove("on");
   };
 });
 
